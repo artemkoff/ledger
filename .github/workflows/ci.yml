@@ -51,7 +51,7 @@ jobs:
           cache: gradle
 
       - name: Validate Gradle Wrapper
-        uses: gradle/wrapper-validation-action@v2
+        uses: gradle/actions/setup-gradle@v5
 
       - name: Build & test
         run: ./gradlew --no-daemon clean test
