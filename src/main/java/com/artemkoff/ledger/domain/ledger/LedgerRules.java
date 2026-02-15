@@ -28,7 +28,7 @@ public class LedgerRules {
 
         var debits = entry.getTotalDebits();
         var credits = entry.getTotalCredits();
-        if (debits != credits) {
+        if (!debits.equals(credits)) {
             throw new ValidationException("Journal entry is not balances, debits=" + debits + ", credits=" + credits);
         }
     }
