@@ -19,6 +19,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    env:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://localhost:5432/app
+      SPRING_DATASOURCE_USERNAME: app
+      SPRING_DATASOURCE_PASSWORD: app
+
     services:
       postgres:
         image: postgres:16
@@ -33,11 +38,6 @@ jobs:
           --health-interval 5s
           --health-timeout 5s
           --health-retries 20
-
-      env:
-        SPRING_DATASOURCE_URL: jdbc:postgresql://localhost:5432/app
-        SPRING_DATASOURCE_USERNAME: app
-        SPRING_DATASOURCE_PASSWORD: app
 
     steps:
       - name: Checkout
