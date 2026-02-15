@@ -3,9 +3,9 @@ spring:
     name: ledger
 
   datasource:
-    url: jdbc:postgresql://localhost:5432/app
-    username: app
-    password: app
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/app}
+    username: ${SPRING_DATASOURCE_USERNAME:app}
+    password: ${SPRING_DATASOURCE_PASSWORD:app}
 
   flyway:
     enabled: true
